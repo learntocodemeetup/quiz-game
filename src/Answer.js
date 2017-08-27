@@ -5,31 +5,32 @@ class Answer extends Component {
   state={
     selected: false
   }
-  toggleSelection() {
+  // toggleSelection() {
 
+  //   this.setState({
+  //     selected: !this.state.selected
+  //   })
+  // }
+
+  changeSelection() {
     this.setState({
       selected: !this.state.selected
     })
   }
-  render() {
-    console.log("Selected is:", this.state.selected)
-    var style = {};
-    if (this.state.selected) {
-      if(this.props.logo==='dropbox'){
-        style.backgroundColor= 'green';
-      } else {
-        style.backgroundColor= 'red';
-      }
-    }
-    return (
 
-        <img
-          style={style}
-          src={process.env.PUBLIC_URL + '/images/' + this.props.logo + '.svg'}
-          onClick={
-            this.toggleSelection.bind(this)
-          }
-          />
+  render() {
+
+    var styling
+    var selected = this.state.selected;
+      if (selected) {
+        styling = "selected"
+      }
+      else {
+        styling = ""
+      }
+
+    return (
+        <li><button className={styling} onClick={this.changeSelection.bind(this)}>{this.props.choice}</button></li>
 
 
     );

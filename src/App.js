@@ -1,25 +1,12 @@
 import React, { Component } from 'react';
-import Question from './Question';
-import Answer from './Answer';
-import './App.css';
+import Quiz from './Quiz';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <h2>logo quiz</h2>
-        </div>
-        <p className="App-intro">
-          Try find what logo this is
-        </p>
-        <Question />
-        <div className="Answers">
-          <Answer logo="behance"/>
-          <Answer logo="dropbox"/>
-          <Answer logo="path"/>
-        </div>
-
+        <h1>Ash's logo quiz</h1>
+        <Quiz answer="pinterest" choices={["Pinterest", "Plaxo", "Etsy", "Delicious", "Dropbox"]} />
       </div>
     );
   }
